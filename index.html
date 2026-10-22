@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Almacén de robots</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&display=swap">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>Almacén de cuatro robots</h1>
+  <p class="sub">Haz un pedido y mira cómo Alfa, Beta, Gamma y Delta se pasan el trabajo entre ellos hasta que el paquete sale por el muelle.</p>
+
+  <div class="layout">
+    <div class="panel">
+      <h2>Formulario de despacho</h2>
+      <label for="uso">¿Qué necesitas limpiar?</label>
+      <select id="uso">
+        <option value="Jabón Líquido">Manos</option>
+        <option value="Detergente en Polvo">Ropa</option>
+        <option value="Desinfectante">Pisos</option>
+        <option value="Esponjas">Platos</option>
+      </select>
+      <div class="row">
+        <div><label for="cant">Unidades</label><input id="cant" type="number" min="1" value="2"></div>
+        <div><label for="lugar">Envío</label><select id="lugar"><option>Local</option><option>Nacional</option></select></div>
+      </div>
+      <label for="ciudad">Ciudad</label><input id="ciudad" value="Cali">
+      <label for="dir">Dirección exacta</label><input id="dir" value="Calle 5 #38-20">
+      <div class="row">
+        <div><label for="per">Prioridad</label><select id="per"><option>Inmediato</option><option>Programado</option></select></div>
+        <div><label for="hor">Horario</label><select id="hor"><option>Mañana (08:00-12:00)</option><option>Tarde (14:00-18:00)</option><option>Noche (19:00-22:00)</option></select></div>
+      </div>
+      <button class="go" id="go">Enviar pedido a los robots</button>
+    </div>
+
+    <div class="stage">
+      <div class="floorwrap" id="floor"><div class="grid" id="grid"></div></div>
+      <div class="legend">
+        <span><i style="background:var(--rose)"></i>Alfa · recibe</span>
+        <span><i style="background:var(--moss)"></i>Beta · recoge</span>
+        <span><i style="background:var(--plum)"></i>Gamma · reparte</span>
+        <span><i style="background:var(--sky)"></i>Delta · reabastece</span>
+      </div>
+      <div class="cols">
+        <div class="panel"><h2>Lo que está pasando</h2><div id="log"></div></div>
+        <div class="panel"><h2>Documento de despacho</h2><div id="doc" class="empty">Aquí aparecerá el documento cuando Gamma termine la entrega.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
